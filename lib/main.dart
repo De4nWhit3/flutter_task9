@@ -45,11 +45,11 @@ class _MyHomePageState extends State<MyHomePage> {
         child: SingleChildScrollView(
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
-            children: <Widget>[
-              QuestionChildWidget(question: game.gameQuestions[0]),
-              QuestionChildWidget(question: game.gameQuestions[1]),
-              QuestionChildWidget(question: game.gameQuestions[2]),
-            ],
+            children: List.generate(
+              game.gameQuestions.length,
+              (index) =>
+                  QuestionChildWidget(question: game.gameQuestions[index]),
+            ),
           ),
         ),
       ),
